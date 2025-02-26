@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { Mail, Instagram, Phone, MapPin } from "lucide-react";
 
+const email = "info@makeitlook.co.uk";
+
 const ContactSection = () => {
   return (
     <div className="relative" id="contact-section">
@@ -34,9 +36,11 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="text-text-primary">Email</h3>
-                  <p className="font-semibold text-elements-primary-main">
-                    info@makeitlook.co.uk
-                  </p>
+                  <a href={`mailto:${email}`} className="cursor-pointer">
+                    <p className="font-semibold text-elements-primary-main">
+                      info@makeitlook.co.uk
+                    </p>
+                  </a>
                 </div>
               </div>
 
@@ -47,9 +51,15 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="text-text-primary">Instagram</h3>
-                  <p className="font-semibold text-elements-primary-main">
-                    @makeitlook_
-                  </p>
+                  <a
+                    href={"https://www.instagram.com/makeitlook_"}
+                    target="__blank"
+                    className="cursor-pointer"
+                  >
+                    <p className="font-semibold text-elements-primary-main">
+                      @makeitlook_
+                    </p>
+                  </a>
                 </div>
               </div>
 
@@ -61,7 +71,7 @@ const ContactSection = () => {
                 <div>
                   <h3 className="text-text-primary">Phone</h3>
                   <p className="font-semibold text-elements-primary-main">
-                    +44 745 931 553
+                    +44 7455 931 553
                   </p>
                 </div>
               </div>
