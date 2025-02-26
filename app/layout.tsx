@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar/index";
 import Footer from "./components/Footer/index";
 import { ThemeProvider } from "./utils/ThemeProvider";
 import { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Make It Look",
@@ -37,6 +38,7 @@ export default function RootLayout({
           <div className="flex flex-col min-h-screen overflow-x-hidden">
             <Navbar />
             <main className="flex-1 w-full">{children}</main>
+            <Analytics />
             <Footer />
           </div>
         </ThemeProvider>
