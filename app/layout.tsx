@@ -4,6 +4,7 @@ import Footer from "./components/Footer/index";
 import { ThemeProvider } from "./utils/ThemeProvider";
 import { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Make It Look",
@@ -39,6 +40,7 @@ export default function RootLayout({
             <Navbar />
             <main className="flex-1 w-full">{children}</main>
             <Analytics />
+            <SpeedInsights />
             <Footer />
           </div>
         </ThemeProvider>
