@@ -46,7 +46,7 @@ const ContactSection = () => {
 
               {/* Instagram */}
               <div className="flex items-center p-4 bg-card-background rounded-lg shadow-lg transition-transform duration-300 hover:translate-x-2">
-                <div className="p-3  rounded-full mr-4">
+                <div className="p-3 rounded-full mr-4">
                   <Instagram className="h-6 w-6" />
                 </div>
                 <div>
@@ -78,30 +78,27 @@ const ContactSection = () => {
             </div>
           </div>
 
-          {/* COLUMN-2: Image and Quote */}
-          <div className="relative flex flex-col items-center md:items-end justify-center">
-            <div className="relative w-full max-w-md">
+          {/* COLUMN-2: Big Engaging Text */}
+          <div className="relative flex flex-col items-center justify-center">
+            <div className="relative w-full h-full flex flex-col items-center justify-center p-8">
               <div className="absolute -top-6 -left-6 w-32 h-32 bg-elements-primary-dimmed/30 rounded-full -z-10"></div>
               <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-elements-secondary-dimmed/30 rounded-full -z-10"></div>
 
-              <Image
-                src="/images/aman.png"
-                alt="profile-image"
-                width={416}
-                height={530}
-                className="relative z-10 rounded-lg shadow-xl"
-              />
+              <h2 className="text-6xl md:text-7xl lg:text-8xl font-bold text-elements-primary-main mb-4 text-center leading-tight">
+                Let&#39;s Bring
+                <br />
+                Your Vision
+                <br />
+                <span className="text-elements-secondary-contrastText">
+                  To Life
+                </span>
+              </h2>
 
-              <div className="absolute -bottom-12 left-6 right-6 bg-card-background p-6 rounded-lg shadow-lg z-20">
-                <p className="text-text-secondary italic">
-                  &quot;I&#39;m passionate about bringing your design ideas to
-                  life. Let&#39;s create something amazing together.&quot;
-                </p>
-                <p className="text-xl font-semibold mt-4 text-elements-primary-main">
-                  Aman Arora
-                </p>
-                <p className="text-text-secondary">Founder, Make It Look</p>
-              </div>
+              <p className="text-xl text-text-secondary text-center mt-6 max-w-sm">
+                Your vision. Our expertise.
+                <br />
+                The perfect combination.
+              </p>
             </div>
           </div>
         </div>

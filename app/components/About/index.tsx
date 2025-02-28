@@ -10,7 +10,7 @@ const AboutData = [
     heading: "My Story",
     imgSrc: "/images/aboutus/imgOne.svg",
     paragraph:
-      "I'm an engineer by training and a designer at heart. My journey started in a world of precision and problem-solving, but my true passion was always in making things look polished and visually appealing. Over time, I became the go-to person for transforming ideas into sleek, professional designs—whether it was for presentations, branding, or digital content.",
+      "Hi I'm Aman, I'm an engineer by training and a designer at heart. My journey started in a world of precision and problem-solving, but my true passion was always in making things look polished and visually appealing. Over time, I became the go-to person for transforming ideas into sleek, professional designs—whether it was for presentations, branding, or digital content.",
     color:
       "bg-gradient-to-br from-elements-primary-main to-elements-primary-light",
   },
