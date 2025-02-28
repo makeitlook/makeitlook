@@ -95,7 +95,7 @@ const ContactSection = () => {
               </h2>
 
               <p className="text-xl text-text-secondary text-center mt-6 max-w-sm">
-                Your vision. Our expertise.
+                Your vision. My skills.
                 <br />
                 The perfect combination.
               </p>
