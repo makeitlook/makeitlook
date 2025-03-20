@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, ChangeEvent, FormEvent } from "react";
-import { Mail, Instagram, Phone, Send, CheckCircle } from "lucide-react";
+import { useState, ChangeEvent } from "react";
+import { Mail, Instagram, Phone, Send } from "lucide-react";
 import Image from "next/image";
 
 const email = "info@makeitlook.co.uk";
@@ -14,34 +14,10 @@ const ContactSection = () => {
     message: "",
   });
 
-  const [showPopup, setShowPopup] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Send form data to Web3Forms
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: new FormData(e.currentTarget),
-    });
-
-    if (response.ok) {
-      setShowPopup(true); // Show pop-up
-      setFormData({ name: "", email: "", subject: "", message: "" }); // Reset form
-
-      // Hide pop-up after 3 seconds
-      setTimeout(() => setShowPopup(false), 3000);
-    }
-
-    setIsSubmitting(false);
   };
 
   return (
@@ -129,12 +105,16 @@ const ContactSection = () => {
                 Send a Message
               </h3>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form
+                action="https://api.web3forms.com/submit"
+                method="POST"
+                className="space-y-6"
+              >
                 {/* Web3Forms Access Key (REQUIRED) */}
                 <input
                   type="hidden"
                   name="access_key"
-                  value="YOUR_ACCESS_KEY"
+                  value="400d16a4-fddd-41ab-9f18-1836a575faa2"
                 />
 
                 {/* Name Input */}
@@ -184,29 +164,32 @@ const ContactSection = () => {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  disabled={isSubmitting}
                   className="inline-flex justify-center items-center rounded-md px-4 py-4 text-sm font-medium transition-all duration-300 ease-in-out bg-elements-primary-main text-white hover:bg-elements-primary-shadow hover:scale-105 active:scale-95 focus:ring-2 focus:ring-offset-2 focus:ring-elements-primary-main/50"
                 >
-                  {isSubmitting ? (
-                    "Sending..."
-                  ) : (
-                    <>
-                      <Send className="h-5 w-5 mr-2" /> Send Message
-                    </>
-                  )}
+                  <Send className="h-5 w-5 mr-2" />
+                  Send Message
                 </button>
               </form>
             </div>
           </div>
         </div>
 
-        {/* ✅ Pop-up Message */}
-        {showPopup && (
-          <div className="fixed bottom-5 right-5 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg flex items-center">
-            <CheckCircle className="h-5 w-5 mr-2" />
-            Message Sent Successfully!
+        {/* 📝 Section with Engaging Text */}
+        <div className="relative flex flex-col items-center justify-center mt-24">
+          <div className="relative w-full h-full flex flex-col items-center justify-center p-8">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-elements-primary-main mb-4 text-center leading-tight">
+              Let&#39;s Bring <br />
+              Your Vision <br />
+              <span className="text-elements-secondary-contrastText">
+                To Life
+              </span>
+            </h2>
+            <p className="text-xl text-text-secondary text-center mt-6 max-w-sm">
+              Your vision. My skills. <br />
+              The perfect combination.
+            </p>
           </div>
-        )}
+        </div>
       </div>
     </div>
   );
