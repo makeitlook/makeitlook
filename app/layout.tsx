@@ -5,6 +5,7 @@ import { ThemeProvider } from "./utils/ThemeProvider";
 import { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Script from "next/script"; // ✅ Import Next.js Script component
 
 export const metadata: Metadata = {
   title: "Make It Look",
@@ -33,7 +34,7 @@ export default function RootLayout({
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
         />
-        {/* Pageclip Stylesheet */}
+        {/* ✅ Pageclip Stylesheet */}
         <link
           rel="stylesheet"
           href="https://s.pageclip.co/v1/pageclip.css"
@@ -51,11 +52,11 @@ export default function RootLayout({
           </div>
         </ThemeProvider>
 
-        {/* Pageclip Script */}
-        <script
+        {/* ✅ Load Pageclip script asynchronously */}
+        <Script
           src="https://s.pageclip.co/v1/pageclip.js"
-          charSet="utf-8"
-        ></script>
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
