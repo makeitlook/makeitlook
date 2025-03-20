@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
-import { Mail, Instagram, Phone, Send } from "lucide-react";
 import { useState, ChangeEvent } from "react";
+import { Mail, Instagram, Phone, Send } from "lucide-react";
+import Image from "next/image";
 
 const email = "info@makeitlook.co.uk";
 
@@ -22,6 +22,7 @@ const ContactSection = () => {
 
   return (
     <div className="relative" id="contact-section">
+      {/* Background Design */}
       <Image
         src="/images/dedicated/spiral.svg"
         height={272}
@@ -31,6 +32,7 @@ const ContactSection = () => {
       />
 
       <div className="mx-auto max-w-7xl mt-20 sm:py-16 lg:px-8">
+        {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-elements-secondary-contrastText">
             Let&#39;s{" "}
@@ -43,6 +45,7 @@ const ContactSection = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          {/* 📞 Contact Details */}
           <div className="flex flex-col justify-start">
             <h3 className="text-2xl font-bold mb-6 text-elements-secondary-contrastText">
               Contact Details
@@ -95,6 +98,7 @@ const ContactSection = () => {
             </div>
           </div>
 
+          {/* ✉️ Contact Form */}
           <div className="lg:col-span-2">
             <div className="bg-card-background p-8 rounded-lg shadow-lg">
               <h3 className="text-2xl font-bold mb-6 text-elements-secondary-contrastText">
@@ -102,90 +106,79 @@ const ContactSection = () => {
               </h3>
 
               <form
-                action="https://formsubmit.co/info@makeitlook.co.uk"
+                action="https://api.web3forms.com/submit"
                 method="POST"
                 className="space-y-6"
               >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-text-primary mb-1">
-                      Your Name
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-elements-primary-main"
-                      placeholder="John Doe"
-                    />
-                  </div>
+                {/* Web3Forms Access Key (REQUIRED) */}
+                <input
+                  type="hidden"
+                  name="access_key"
+                  value="400d16a4-fddd-41ab-9f18-1836a575faa2"
+                />
 
-                  <div>
-                    <label className="block text-sm font-medium text-text-primary mb-1">
-                      Your Email
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-elements-primary-main"
-                      placeholder="john@example.com"
-                    />
-                  </div>
-                </div>
+                {/* Name Input */}
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-elements-primary-main"
+                />
 
-                <div>
-                  <label className="block text-sm font-medium text-text-primary mb-1">
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-elements-primary-main"
-                    placeholder="Project Inquiry"
-                  />
-                </div>
+                {/* Email Input */}
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-elements-primary-main"
+                />
 
-                <div>
-                  <label className="block text-sm font-medium text-text-primary mb-1">
-                    Your Message
-                  </label>
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={5}
-                    className="w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-elements-primary-main"
-                    placeholder="Tell us about your project..."
-                  ></textarea>
-                </div>
+                {/* Subject Input */}
+                <input
+                  type="text"
+                  name="subject"
+                  placeholder="Subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-elements-primary-main"
+                />
 
-                <div>
-                  <button
-                    type="submit"
-                    className="pageclip-form__submit w-full flex items-center justify-center px-6 py-3 bg-elements-primary-main text-white rounded-md transition hover:bg-elements-primary-main/90"
-                  >
-                    <Send className="h-5 w-5 mr-2" />
-                    <span>Send Message</span>
-                  </button>
-                </div>
+                {/* Message Input */}
+                <textarea
+                  name="message"
+                  placeholder="Your Message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={5}
+                  className="w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-elements-primary-main"
+                ></textarea>
+
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  className="bg-elements-primary-main text-white px-6 py-3 rounded-md hover:bg-blue-600 flex"
+                >
+                  <Send className="h-5 w-5 mr-2" />
+                  Send Message
+                </button>
               </form>
 
               <p className="text-center text-text-secondary text-sm mt-3">
-                Your message will be sent securely via Pageclip.
+                Your message will be sent securely via Web3Forms.
               </p>
             </div>
           </div>
         </div>
 
+        {/* 📝 Section with Engaging Text */}
         <div className="relative flex flex-col items-center justify-center mt-24">
           <div className="relative w-full h-full flex flex-col items-center justify-center p-8">
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-elements-primary-main mb-4 text-center leading-tight">
