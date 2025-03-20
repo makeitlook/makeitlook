@@ -102,9 +102,9 @@ const ContactSection = () => {
               </h3>
 
               <form
-                action="https://send.pageclip.co/1r6l0UbiwKhrUwxHZBeXLJ9UZlcsjecw"
-                className="pageclip-form space-y-6"
-                method="post"
+                action="https://formsubmit.co/info@makeitlook.co.uk"
+                method="POST"
+                className="space-y-6"
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
