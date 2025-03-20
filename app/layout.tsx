@@ -33,6 +33,12 @@ export default function RootLayout({
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
         />
+        {/* Pageclip Stylesheet */}
+        <link
+          rel="stylesheet"
+          href="https://s.pageclip.co/v1/pageclip.css"
+          media="screen"
+        />
       </head>
       <body>
         <ThemeProvider defaultTheme="system">
@@ -44,6 +50,12 @@ export default function RootLayout({
             <Footer />
           </div>
         </ThemeProvider>
+
+        {/* Pageclip Script */}
+        <script
+          src="https://s.pageclip.co/v1/pageclip.js"
+          charSet="utf-8"
+        ></script>
       </body>
     </html>
   );
